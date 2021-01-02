@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function confirmDelete(name) {
+            let r = confirm('Ban co muon xoa ' + name);
+            return r;
+        }
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Toys Store</title>
+    <style>
+        .footer{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <img src="https://www.softtoyshop.com.au/pub/media/logo/stores/1/soft-toy-shop-logo-wide.png" class="cangiua">
+    </center>
+    <table class="table" border="1px">
+        <tr class="font-weight-bold">
+            <td>Toys Name</td>
+            <td>Price</td>
+            <td>Age Recommend</td>
+            <td>Date Add</td>
+            <td>Delete</td>
+            <td>Edit</td>
+        </tr>
+        {{# each model}}
+        <tr>
+            <td>{{ToysName}}</td>
+            <td>{{Price}}</td>
+            <td>{{AgeRecommend}}</td>
+            <td>{{Dateadd}}</td>
+            <td><a href="/delete?id={{_id}}" onclick="return confirmDelete('{{ToysName}}')">Delete</a></td>
+            <td><a href="/edit?id={{_id}}">Edit</a></td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <form action="/doSearch" method="post">
+        <div class="form-group">
+            <label for="usr">Toys Name:</label>
+            <input type="text" class="form-control" name="txtName" maxl >
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <table class="table">
+            <tr>
+                <td><a href="/insert"> New Toys</a></td>
+
+                <td><a href="/"> Show ALl Toys</a></td>
+            </tr>
+    </table>
+    {{> footer}}
+</body>
+
+</html>

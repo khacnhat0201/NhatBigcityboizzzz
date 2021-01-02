@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <img src="https://www.softtoyshop.com.au/pub/media/logo/stores/1/soft-toy-shop-logo-wide.png"
+                class="cangiua">
+        </center>
+        <h2>New Toys</h2>
+        <form action="/doEdit" method="post">
+            <input type="hidden" name="id" value="{{model._id}}">
+            <div class="form-group">
+                <label for="usr">Toys Name:</label>
+                <input type="text" class="form-control" name="txtName" value="{{model.ToysName}}">
+            </div>
+            <div class="form-group">
+                <label for="usr">Toys Price:</label>
+                <input type="text" class="form-control" name="txtPrice" value="{{model.Price}}">
+            </div>
+            <div class="form-group">
+                <label for="usr">Age:</label>
+                <input type="text" class="form-control" name="txtAge" value="{{model.AgeRecommend}}">
+            </div>
+            <div class="form-group">
+                <label for="usr">Date:</label>
+                <input type="Date" class="form-control" name="txtDate" value="{{{Dateadd}}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+         <tr>
+            <a href="/">Home</a>
+        </tr>
+        {{>footer}}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+    <style>
+        a1. {
+            color: blue;
+            background-color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <center>
+        <img src="https://www.softtoyshop.com.au/pub/media/logo/stores/1/soft-toy-shop-logo-wide.png" class="cangiua">
+    </center>
+    <div class="container">
+        <h2>New Toys</h2>
+        <form action="/doInsert" method="post">
+            <div class="form-group">
+                <label for="usr">Toys Name:</label>
+                <input type="text" class="form-control" name="txtName" required>
+            </div>
+            <div class="form-group">
+                <label for="usr">Toys Price:</label>
+                <input type="text" class="form-control" name="txtPrice" required>
+            </div>
+            <div class="form-group">
+                <label for="usr">Age:</label>
+                <input type="number" class="form-control" name="txtAge" required>
+            </div>
+            <div class="form-group">
+                <label for="usr">Date:</label>
+                <input type="date" class="form-control" name="txtDate" value="{{Dateadd}}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        <tr>
+            <a href="/">Home</a>
+        </tr>
+        {{>footer}}
+    </div>
+    
+</body>
+</html>
